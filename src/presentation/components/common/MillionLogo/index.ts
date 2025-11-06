@@ -1,0 +1,1 @@
+export { MillionLogo } from './MillionLogo';

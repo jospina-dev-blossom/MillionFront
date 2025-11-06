@@ -1,0 +1,78 @@
+/* Pagination - Estilo Airbnb */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 48px 0;
+  padding: 0 24px;
+}
+
+.pagination__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination__button:hover:not(:disabled) {
+  border-color: #222222;
+}
+
+.pagination__button:disabled {
+  color: #dddddd;
+  cursor: not-allowed;
+  border-color: #ebebeb;
+}
+
+.pagination__button--active {
+  background: #222222;
+  color: white;
+  border-color: #222222;
+}
+
+.pagination__button--active:hover {
+  background: #222222;
+}
+
+.pagination__ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: #717171;
+  font-size: 14px;
+}
+
+.pagination__arrow {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    gap: 4px;
+  }
+
+  .pagination__button {
+    min-width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .pagination__ellipsis {
+    min-width: 36px;
+    height: 36px;
+  }
+}

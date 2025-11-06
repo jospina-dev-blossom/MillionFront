@@ -1,0 +1,256 @@
+/* PropertyDetailPage - Million Luxury Style */
+.property-detail {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.property-detail__header {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #ebebeb;
+  padding: 24px;
+  z-index: 10;
+}
+
+.property-detail__header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.property-detail__back {
+  position: absolute;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.property-detail__back:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.property-detail__spacer {
+  display: none;
+}
+
+.property-detail__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.property-detail__title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  letter-spacing: 1px;
+}
+
+.property-detail__address {
+  font-size: 16px;
+  color: #717171;
+  margin: 0 0 32px 0;
+}
+
+/* Gallery */
+.property-detail__gallery {
+  margin-bottom: 48px;
+}
+
+.property-detail__images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.property-detail__image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.property-detail__image:hover {
+  transform: scale(1.02);
+}
+
+/* Content Grid */
+.property-detail__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .property-detail__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main Info */
+.property-detail__main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.property-detail__section {
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+}
+
+.property-detail__section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #c9a055;
+  letter-spacing: 1px;
+}
+
+.property-detail__info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 576px) {
+  .property-detail__info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.property-detail__info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.property-detail__info-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #717171;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.property-detail__info-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.property-detail__price {
+  font-size: 28px;
+  font-weight: 600;
+  color: #c9a055;
+}
+
+/* Sidebar */
+.property-detail__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Owner Card */
+.property-detail__owner {
+  padding: 32px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.property-detail__owner-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #c9a055;
+  margin: 0 auto 16px;
+}
+
+.property-detail__owner-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.property-detail__owner-info {
+  font-size: 14px;
+  color: #717171;
+  margin: 4px 0;
+}
+
+/* Traces */
+.property-detail__traces {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.property-detail__trace {
+  padding: 20px;
+  background: #f7f7f7;
+  border-left: 4px solid #c9a055;
+  border-radius: 4px;
+}
+
+.property-detail__trace-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.property-detail__trace-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.property-detail__trace-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.property-detail__trace-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #717171;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.property-detail__trace-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}

@@ -1,0 +1,41 @@
+/* MillionLogo Component */
+.million-logo {
+  text-align: center;
+}
+
+.million-logo__text {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.million-logo__subtitle {
+  display: block;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #c9a055;
+  text-transform: uppercase;
+}
+
+/* Default variant (header) */
+.million-logo--default .million-logo__text {
+  font-size: 42px;
+}
+
+.million-logo--default .million-logo__subtitle {
+  font-size: 11px;
+}
+
+/* Footer variant */
+.million-logo--footer .million-logo__text {
+  font-size: 32px;
+  letter-spacing: 6px;
+  color: #ffffff;
+}
+
+.million-logo--footer .million-logo__subtitle {
+  font-size: 10px;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,177 @@
+/* FilterModal - Modal de filtros estilo Airbnb */
+.filter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.filter-modal__content {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.filter-modal__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0;
+}
+
+.filter-modal__close {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.filter-modal__close:hover {
+  background: #f7f7f7;
+}
+
+.filter-modal__close-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.filter-modal__body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.filter-modal__section {
+  margin-bottom: 32px;
+}
+
+.filter-modal__section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-modal__section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 16px 0;
+}
+
+.filter-modal__input-group {
+  margin-bottom: 16px;
+}
+
+.filter-modal__label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.filter-modal__input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b0b0b0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #222222;
+  transition: border-color 0.2s ease;
+}
+
+.filter-modal__input:hover {
+  border-color: #222222;
+}
+
+.filter-modal__input:focus {
+  outline: none;
+  border-color: #222222;
+  border-width: 2px;
+  padding: 11px;
+}
+
+.filter-modal__price-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.filter-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid #ebebeb;
+}
+
+.filter-modal__clear {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.filter-modal__clear:hover {
+  color: #000000;
+}
+
+.filter-modal__apply {
+  background: #222222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.filter-modal__apply:hover {
+  background: #000000;
+}
+
+.filter-modal__apply:disabled {
+  background: #dddddd;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .filter-modal__content {
+    max-height: 95vh;
+    border-radius: 12px 12px 0 0;
+    align-self: flex-end;
+  }
+
+  .filter-modal__price-inputs {
+    grid-template-columns: 1fr;
+  }
+}
