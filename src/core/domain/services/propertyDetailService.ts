@@ -14,7 +14,6 @@ export const getEnabledImages = (property: PropertyDetail): PropertyImage[] => {
 
 /**
  * Obtiene la traza más reciente de una propiedad
- * TODO: Eliminar si no se usa en el futuro
  */
 export const getLatestTrace = (property: PropertyDetail): PropertyTrace | null => {
   if (property.traces.length === 0) return null;

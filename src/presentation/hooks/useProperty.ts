@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { useGetPropertyByIdQuery } from '@infrastructure/api/propertyApi';
 import { 
   getEnabledImages, 
-  getLatestTrace, 
   getTotalPriceWithTax,
   sortTracesByDate,
   getOwnerAge,
@@ -28,12 +27,6 @@ export const useProperty = (id: string, skip = false) => {
   // Computed values usando las funciones del dominio
   const enabledImages = useMemo(
     () => (property ? getEnabledImages(property) : []),
-    [property]
-  );
-
-  //TODO: Quitar si no se usa en el futuro
-  const latestTrace = useMemo(
-    () => (property ? getLatestTrace(property) : null),
     [property]
   );
 
@@ -67,7 +60,6 @@ export const useProperty = (id: string, skip = false) => {
     
     // Computed values
     enabledImages,
-    latestTrace,
     totalPriceWithTax,
     sortedTraces,
     ownerAge,

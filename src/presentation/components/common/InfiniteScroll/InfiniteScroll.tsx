@@ -21,7 +21,6 @@ export const InfiniteScroll = ({
   const handleObserver = useCallback(
     (entries: IntersectionObserverEntry[]) => {
       const [target] = entries;
-      // Evitar cargar automáticamente en el primer render
       if (target.isIntersecting && hasMore && !isLoading && hasLoadedOnce.current) {
         onLoadMore();
       }
@@ -33,14 +32,13 @@ export const InfiniteScroll = ({
     const element = observerTarget.current;
     if (!element) return;
 
-    // Marcar que ya cargó una vez después de un breve delay
     const timer = setTimeout(() => {
       hasLoadedOnce.current = true;
     }, 500);
 
     const options = {
       root: null,
-      rootMargin: '200px', // Cargar cuando esté 200px antes de llegar
+      rootMargin: '200px',
       threshold: 0,
     };
 

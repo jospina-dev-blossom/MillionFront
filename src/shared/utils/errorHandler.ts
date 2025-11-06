@@ -49,16 +49,3 @@ export const getErrorMessage = (error: unknown): string => {
 
   return 'Ha ocurrido un error inesperado';
 };
-
-/**
- * Formatea errores de validación del backend
- */
-export const formatValidationErrors = (error: unknown): Record<string, string[]> => {
-  if (isFetchBaseQueryError(error) && 'data' in error) {
-    const data = error.data as Record<string, unknown>;
-    if ('errors' in data && typeof data.errors === 'object') {
-      return data.errors as Record<string, string[]>;
-    }
-  }
-  return {};
-};

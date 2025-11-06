@@ -6,18 +6,6 @@ import type { Owner } from '../entities/PropertyDetail';
  */
 
 /**
- * Formatea la fecha de nacimiento del propietario
- */
-export const formatOwnerBirthday = (owner: Owner, locale = 'es-ES'): string => {
-  const date = new Date(owner.birthday);
-  return date.toLocaleDateString(locale, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-};
-
-/**
  * Calcula la edad del propietario
  */
 export const getOwnerAge = (owner: Owner): number => {

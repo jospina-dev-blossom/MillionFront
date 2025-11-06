@@ -5,8 +5,6 @@
 
 // Property Services
 export {
-  isPropertyInPriceRange,
-  formatPropertyPrice,
   isRecentProperty,
 } from './propertyService';
 
@@ -20,6 +18,5 @@ export {
 
 // Owner Services
 export {
-  formatOwnerBirthday,
   getOwnerAge,
 } from './ownerService';
