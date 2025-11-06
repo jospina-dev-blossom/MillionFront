@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import { useGetPropertyByIdQuery } from '@infrastructure/api/propertyApi';
-import { 
-  getEnabledImages, 
+import { useEffect, useMemo } from "react";
+import { useGetPropertyByIdQuery } from "@infrastructure/api/propertyApi";
+import {
+  getEnabledImages,
   getTotalPriceWithTax,
   sortTracesByDate,
   getOwnerAge,
-} from '@core/domain/services';
+} from "@core/domain/services";
 
 /**
  * Custom Hook para obtener una propiedad por ID con información detallada
@@ -23,6 +23,10 @@ export const useProperty = (id: string, skip = false) => {
   } = useGetPropertyByIdQuery(id, {
     skip: !id || skip, // No hace la petición si no hay ID o skip es true
   });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
 
   // Computed values usando las funciones del dominio
   const enabledImages = useMemo(
@@ -48,16 +52,16 @@ export const useProperty = (id: string, skip = false) => {
   return {
     // Datos principales
     property,
-    
+
     // Estados
     isLoading,
     isFetching,
     isError,
     error,
-    
+
     // Acciones
     refetch,
-    
+
     // Computed values
     enabledImages,
     totalPriceWithTax,
