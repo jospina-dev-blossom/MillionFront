@@ -108,6 +108,12 @@ src/
 
 Este proyecto se conecta a una API backend en `https://localhost:44311/api/v1`. Asegúrate de que el servidor backend esté ejecutándose antes de iniciar la aplicación.
 
-## 📝 Licencia
+##  Licencia
 
-Este proyecto es privado.
+MIT License
+Copyright (c) 2025 Jhon Ospina
+Permission is hereby granted, free of charge, to any person obtaining a copy...
+
+##  Contacto
+
+Jhon Ospina - [GitHub](https://github.com/jospina-dev-blossom)
