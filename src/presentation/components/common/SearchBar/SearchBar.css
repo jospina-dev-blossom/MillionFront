@@ -34,6 +34,18 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
+.search-bar__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .search-bar__input {
   flex: 1;
   border: none;

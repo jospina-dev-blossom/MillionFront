@@ -120,6 +120,37 @@
   gap: 12px;
 }
 
+.filter-modal__input--error {
+  border-color: #c13515;
+}
+
+.filter-modal__input--error:hover {
+  border-color: #c13515;
+}
+
+.filter-modal__input--error:focus {
+  border-color: #c13515;
+}
+
+.filter-modal__error {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: #fff4f2;
+  border: 1px solid #ffd9d1;
+  border-radius: 8px;
+  color: #c13515;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-modal__error::before {
+  content: '⚠️';
+  font-size: 16px;
+}
+
 .filter-modal__footer {
   display: flex;
   align-items: center;

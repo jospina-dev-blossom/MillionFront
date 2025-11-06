@@ -1,63 +1,88 @@
 /* PropertyTraces */
 .property-traces {
-  padding: 32px;
-  background: #ffffff;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   border: 1px solid #ebebeb;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .property-traces__title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   color: #1a1a1a;
-  margin: 0 0 24px 0;
-  padding-bottom: 16px;
-  border-bottom: 2px solid #c9a055;
-  letter-spacing: 1px;
+  margin: 0 0 32px 0;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #c9a055;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.property-traces__title::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #1a1a1a;
 }
 
 .property-traces__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .property-traces__item {
-  padding: 20px;
-  background: #f7f7f7;
-  border-left: 4px solid #c9a055;
-  border-radius: 4px;
+  padding: 24px;
+  background: #ffffff;
+  border-left: 5px solid #c9a055;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.3s ease;
+}
+
+.property-traces__item:hover {
+  box-shadow: 0 4px 20px rgba(201, 160, 85, 0.15);
 }
 
 .property-traces__item-name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #1a1a1a;
-  margin: 0 0 12px 0;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
 }
 
 .property-traces__item-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 16px;
+}
+
+@media (max-width: 576px) {
+  .property-traces__item-info {
+    grid-template-columns: 1fr;
+  }
 }
 
 .property-traces__item-field {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
 }
 
 .property-traces__item-label {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   color: #717171;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .property-traces__item-value {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: #1a1a1a;
 }

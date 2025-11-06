@@ -1,5 +1,6 @@
 import { useState, type KeyboardEvent } from 'react';
 import { Search, SlidersHorizontal } from 'lucide-react';
+import { TEXTS } from '../../../../shared/constants/texts';
 import './SearchBar.css';
 
 interface SearchBarProps {
@@ -12,7 +13,7 @@ interface SearchBarProps {
 export const SearchBar = ({
   onSearch,
   onFilterClick,
-  placeholder = 'Search properties...',
+  placeholder = TEXTS.searchBar.placeholder,
   isLoading = false,
 }: SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,33 +29,46 @@ export const SearchBar = ({
   };
 
   return (
-    <div className="search-bar">
+    <search className="search-bar" role="search">
       <div className="search-bar__wrapper">
-        <div className="search-bar__container">
+        <form 
+          className="search-bar__container" 
+          onSubmit={(e) => { e.preventDefault(); handleSearch(); }}
+          role="search"
+        >
+          <label htmlFor="property-search" className="search-bar__label">
+            {TEXTS.searchBar.label}
+          </label>
           <input
-            type="text"
+            id="property-search"
             className="search-bar__input"
             placeholder={placeholder}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown ={handleKeyPress}
             disabled={isLoading}
+            aria-label={TEXTS.searchBar.label}
           />
           <button
+            type="submit"
             className="search-bar__button"
-            onClick={handleSearch}
             disabled={isLoading}
-            aria-label="Search"
+            aria-label={TEXTS.searchBar.searchButton}
           >
-            <Search className="search-bar__icon" size={20} />
+            <Search className="search-bar__icon" size={20} aria-hidden="true" />
           </button>
-        </div>
+        </form>
 
-        <button className="search-bar__filters-button" onClick={onFilterClick}>
-          <SlidersHorizontal className="search-bar__filter-icon" size={20} />
-          Filters
+        <button 
+          type="button"
+          className="search-bar__filters-button" 
+          onClick={onFilterClick}
+          aria-label={TEXTS.searchBar.filtersButton}
+        >
+          <SlidersHorizontal className="search-bar__filter-icon" size={20} aria-hidden="true" />
+          <span>{TEXTS.searchBar.filtersText}</span>
         </button>
       </div>
-    </div>
+    </search>
   );
 };

@@ -17,28 +17,21 @@ export const useInfiniteProperties = (initialFilters?: PropertyFilters) => {
   const { data, isLoading, isFetching, isError, error, refetch } =
     useGetPropertiesQuery({ ...filters, pageNumber: currentPage });
 
-  // Acumular propiedades cuando lleguen nuevos datos
   useEffect(() => {
     if (!data?.items) return;
 
-    // Crear clave de filtros sin pageNumber para detectar cambios
-    const getPureFiltersKey = (propertyFilters: PropertyFilters) => {
-      const { name, address, minPrice, maxPrice } = propertyFilters;
-      return JSON.stringify({ name, address, minPrice, maxPrice });
-    };
+    const currentFiltersKey = JSON.stringify({
+      name: filters.name,
+      address: filters.address,
+      minPrice: filters.minPrice,
+      maxPrice: filters.maxPrice,
+    });
 
-    const currentFiltersKey = getPureFiltersKey(filters);
+    const filtersChanged = previousFiltersRef.current !== currentFiltersKey;
 
-    const filtersChanged =
-      previousFiltersRef.current &&
-      previousFiltersRef.current !== currentFiltersKey;
-
-    if (filtersChanged) {
+    if (currentPage === 1 || filtersChanged) {
       setAllProperties(data.items);
       previousFiltersRef.current = currentFiltersKey;
-    } else if (currentPage === 1) {
-      previousFiltersRef.current = currentFiltersKey;
-      setAllProperties(data.items);
     } else {
       setAllProperties((prev) => {
         const existingIds = new Set(prev.map((p) => p.id));

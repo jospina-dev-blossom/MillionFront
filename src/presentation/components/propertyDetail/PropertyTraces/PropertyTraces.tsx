@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import type { PropertyTrace } from '@core/domain/entities';
 import { TEXTS } from '@shared/constants/texts';
 import { formatCurrency, formatDate } from '@shared/utils';
@@ -13,11 +14,22 @@ export const PropertyTraces = ({ traces }: PropertyTracesProps) => {
   }
 
   return (
-    <div className="property-traces">
+    <motion.div 
+      className="property-traces"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
       <h2 className="property-traces__title">{TEXTS.propertyDetail.transactionHistory}</h2>
       <div className="property-traces__list">
-        {traces.map((trace) => (
-          <div key={trace.idPropertyTrace} className="property-traces__item">
+        {traces.map((trace, index) => (
+          <motion.div 
+            key={trace.idPropertyTrace} 
+            className="property-traces__item"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
+          >
             <h3 className="property-traces__item-name">{trace.name}</h3>
             <div className="property-traces__item-info">
               <div className="property-traces__item-field">
@@ -47,9 +59,9 @@ export const PropertyTraces = ({ traces }: PropertyTracesProps) => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };

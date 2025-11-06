@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useProperty } from '@presentation/hooks/useProperty';
 import { Loading } from '@presentation/components/common/Loading/Loading';
 import { ErrorMessage } from '@presentation/components/common/ErrorMessage/ErrorMessage';
@@ -58,9 +59,28 @@ export const PropertyDetailPage = () => {
     <div className="property-detail">
       <PropertyHeader />
 
-      <div className="property-detail__container">
-        <h1 className="property-detail__title">{property.name}</h1>
-        <p className="property-detail__address">{property.addressProperty}</p>
+      <motion.div 
+        className="property-detail__container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.h1 
+          className="property-detail__title"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          {property.name}
+        </motion.h1>
+        <motion.p 
+          className="property-detail__address"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {property.addressProperty}
+        </motion.p>
 
         <PropertyGallery images={enabledImages} propertyName={property.name} />
 
@@ -79,7 +99,7 @@ export const PropertyDetailPage = () => {
             <PropertyOwner owner={property.owner} ownerAge={ownerAge} />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <Footer />
     </div>

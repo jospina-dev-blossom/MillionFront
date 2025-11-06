@@ -22,6 +22,15 @@ export const TEXTS = {
     errorLoading: 'Error loading properties',
   },
 
+  // Search Bar
+  searchBar: {
+    label: 'Search properties',
+    placeholder: 'Search properties...',
+    searchButton: 'Search properties',
+    filtersButton: 'Open filters',
+    filtersText: 'Filters',
+  },
+
   // Filter Modal
   filterModal: {
     title: 'Filters',

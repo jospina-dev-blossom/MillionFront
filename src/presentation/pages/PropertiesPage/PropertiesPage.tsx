@@ -32,10 +32,10 @@ export const PropertiesPage = () => {
   if (isLoading) {
     return (
       <div className="properties-page">
-        <div className="properties-page__loading">
-          <div className="properties-page__spinner" />
+        <main className="properties-page__loading" role="status" aria-live="polite" aria-label="Loading properties">
+          <div className="properties-page__spinner" aria-hidden="true" />
           <p className="properties-page__loading-text">{TEXTS.propertiesPage.loadingProperties}</p>
-        </div>
+        </main>
       </div>
     );
   }
@@ -43,14 +43,18 @@ export const PropertiesPage = () => {
   if (isError) {
     return (
       <div className="properties-page">
-        <div className="properties-page__error">
-          <AlertCircle className="properties-page__error-icon" size={48} />
-          <h2 className="properties-page__error-title">{TEXTS.propertiesPage.errorLoading}</h2>
+        <main className="properties-page__error" role="alert" aria-live="assertive">
+          <AlertCircle className="properties-page__error-icon" size={48} aria-hidden="true" />
+          <h1 className="properties-page__error-title">{TEXTS.propertiesPage.errorLoading}</h1>
           <p className="properties-page__error-message">{getErrorMessage(error)}</p>
-          <button className="properties-page__error-button" onClick={() => refetch()}>
+          <button 
+            className="properties-page__error-button" 
+            onClick={() => refetch()}
+            type="button"
+          >
             {TEXTS.common.tryAgain}
           </button>
-        </div>
+        </main>
       </div>
     );
   }
@@ -68,7 +72,10 @@ export const PropertiesPage = () => {
         />
       </header>
 
-      <main className="properties-page__content">
+      <main className="properties-page__content" id="main-content">
+        <h1 className="properties-page__title">
+          {TEXTS.propertiesPage.title}
+        </h1>
         <InfiniteScroll
           onLoadMore={loadMore}
           hasMore={hasMore}

@@ -1,7 +1,7 @@
 /* PropertyDetailPage - Million Luxury Style */
 .property-detail {
   min-height: 100vh;
-  background: #ffffff;
+  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
 }
 
 .property-detail__back-link {
@@ -13,48 +13,70 @@
   font-size: 14px;
   font-weight: 500;
   margin-top: 24px;
-  padding: 8px 16px;
-  border: 1px solid #ebebeb;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  padding: 12px 24px;
+  border: 2px solid #ebebeb;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: #ffffff;
 }
 
 .property-detail__back-link:hover {
-  background: #f7f7f7;
+  background: #1a1a1a;
+  color: #ffffff;
   border-color: #1a1a1a;
+  transform: translateX(-4px);
 }
 
 .property-detail__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 48px 24px;
 }
 
 .property-detail__title {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 48px;
+  font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 8px 0;
-  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .property-detail__address {
-  font-size: 16px;
+  font-size: 18px;
   color: #717171;
-  margin: 0 0 32px 0;
+  margin: 0 0 48px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.property-detail__address::before {
+  content: '📍';
+  font-size: 20px;
 }
 
 /* Content Grid */
 .property-detail__content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 48px;
+  gap: 32px;
   margin-bottom: 48px;
+  align-items: start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .property-detail__content {
     grid-template-columns: 1fr;
+  }
+  
+  .property-detail__title {
+    font-size: 36px;
+  }
+  
+  .property-detail__sidebar {
+    order: -1;
   }
 }
 
@@ -67,7 +89,15 @@
 
 /* Sidebar */
 .property-detail__sidebar {
+  position: sticky;
+  top: 100px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+@media (max-width: 968px) {
+  .property-detail__sidebar {
+    position: static;
+  }
 }
