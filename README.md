@@ -82,7 +82,9 @@ npm run test:coverage
 src/
 ├── core/               # Lógica de negocio y dominio
 │   ├── domain/         # Entidades y servicios
-│   └── infrastructure/ # APIs y configuración
+├── infrastructure/ # APIs y configuración
+│   ├── api/            # Instancia de la API
+│   ├── config/         # Configuracion de la API
 ├── presentation/       # Componentes React y UI
 │   ├── components/     # Componentes reutilizables
 │   ├── hooks/          # Custom hooks
